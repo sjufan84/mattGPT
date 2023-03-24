@@ -14,6 +14,12 @@ if "display_messages" not in st.session_state:
 
 st.subheader("Chat with MattGPT")
 
+if st.session_state.display_messages:
+    clear_button = st.button("Clear Chat")
+    if clear_button:
+        st.session_state.messages = []
+        st.session_state.display_messages = []
+
 question = st.text_input("Type your message to Matt here")
 send_button = st.button("Send")
 if send_button:
@@ -22,6 +28,9 @@ if send_button:
         initiate_bot(question)
         for message in st.session_state.display_messages:
             st.write(message)
+    
+    question = ""
+
 
 
 
