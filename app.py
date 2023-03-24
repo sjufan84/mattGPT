@@ -1,6 +1,5 @@
 # A streamlit app to display a chat bot using GPT3.5 turbo model for my friend Matt who is a dog trainer
 import streamlit as st
-import os
 from utils.chat2 import initiate_bot
 from dotenv import load_dotenv
 load_dotenv()
@@ -29,7 +28,6 @@ if send_button:
         for message in st.session_state.display_messages:
             st.write(message)
     
-    question = ""
 
 
 
